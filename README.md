@@ -14,8 +14,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Fullstack Development ](#-fullstack-development-)
-    - ["Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:](#math-magicians-is-a-website-for-all-fans-of-mathematics-it-is-a-single-page-app-spa-that-allows-users-to)
+- [📖 About project ](#mathmagicians)
   - [🛠  Built With ](#--built-with-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
@@ -101,7 +100,7 @@ To run the project, execute the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/sagieramos/mathmagicians/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -7,7 +7,7 @@
   <img src="screenshot.gif" alt="overview" width="auto"  height="auto" />
   <br/>
 
-  <h3><b>Leaderboard</b></h3>
+  <h3><b>mathmagicians</b></h3>
 
 </div>
 
@@ -15,6 +15,7 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Fullstack Development ](#-fullstack-development-)
+    - ["Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:](#math-magicians-is-a-website-for-all-fans-of-mathematics-it-is-a-single-page-app-spa-that-allows-users-to)
   - [🛠  Built With ](#--built-with-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
@@ -31,9 +32,12 @@
   - [📝 License ](#-license-)
 
 
-# 📖 Fullstack Development <a name="leaderboard"></a>
+# 📖 Fullstack Development <a name="mathmagicians"></a>
 
-**The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external [Leaderboard API service](https://microverse.notion.site/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3).**
+### "Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
+
+- Make simple calculations.
+- Read a random math-related quote.
 
 ## 🛠  Built With <a name="built-with"></a>
 - HTML
@@ -41,8 +45,7 @@
 - JavaScript
 - React
 ### Key Features <a name="key-features"></a>
-- All data is preserved thanks to the external [Leaderboard API service](https://microverse.notion.site/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3)
-- UI/UX improved
+- Perform maths operations
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

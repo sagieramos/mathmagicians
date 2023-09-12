@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { evaluate } from 'mathjs';
 import { v4 as uuidv4 } from 'uuid';
+import './Calculator.scss';
 
 const Calculator = () => {
   const [input, setInput] = useState('');
@@ -31,12 +32,12 @@ const Calculator = () => {
   };
 
   return (
-    <div className="calculator">
-      <div className="display">
+    <div id="calc">
+      <div className="display-calc">
         <input type="text" value={input} readOnly />
       </div>
-      <div className="buttons">
-        <div className="row">
+      <div className="btn-calc">
+        <div className="row-calc">
           {['AC', '+/-', '%', '+'].map((value) => (
             <button key={uuidv4()} onClick={() => handleAction(value)} type="button">
               {value}
@@ -44,14 +45,14 @@ const Calculator = () => {
           ))}
         </div>
         {[
-          ['7', '8', '9', '*'],
+          ['7', '8', '9', 'x'],
           ['4', '5', '6', '-'],
           ['1', '2', '3', '+'],
-          ['0', '='],
+          ['0', '.', '='],
         ].map((row) => (
-          <div key={uuidv4()} className="row">
+          <div key={uuidv4()} className="row-calc">
             {row.map((value) => (
-              <button key={uuidv4()} onClick={() => handleAction(value)} type="button">
+              <button key={uuidv4()} onClick={() => handleAction(value === 'x' ? '*' : value)} type="button">
                 {value}
               </button>
             ))}

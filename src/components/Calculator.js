@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { evaluate } from 'mathjs';
 import { v4 as uuidv4 } from 'uuid';
+import CalculatorButton from './button';
 import './Calculator.scss';
 
 const Calculator = () => {
@@ -39,9 +40,7 @@ const Calculator = () => {
       <div className="btn-calc">
         <div className="row-calc">
           {['AC', '+/-', '%', '+'].map((value) => (
-            <button key={uuidv4()} onClick={() => handleAction(value)} type="button">
-              {value}
-            </button>
+            <CalculatorButton key={uuidv4()} value={value} onClick={handleAction} />
           ))}
         </div>
         {[
@@ -52,9 +51,11 @@ const Calculator = () => {
         ].map((row) => (
           <div key={uuidv4()} className="row-calc">
             {row.map((value) => (
-              <button key={uuidv4()} onClick={() => handleAction(value === 'x' ? '*' : value)} type="button">
-                {value}
-              </button>
+              <CalculatorButton
+                key={uuidv4()}
+                value={value === 'x' ? '*' : value}
+                onClick={handleAction}
+              />
             ))}
           </div>
         ))}

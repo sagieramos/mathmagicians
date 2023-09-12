@@ -4,7 +4,7 @@
 
 <div align="center">
 
-  <img src="screenshot.gif" alt="overview" width="auto"  height="auto" />
+  <img src="Screenshot.png" alt="overview" width="auto"  height="auto" />
   <br/>
 
   <h3><b>mathmagicians</b></h3>
@@ -14,8 +14,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Fullstack Development ](#-fullstack-development-)
-    - ["Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:](#math-magicians-is-a-website-for-all-fans-of-mathematics-it-is-a-single-page-app-spa-that-allows-users-to)
+- [📖 About project ](#mathmagicians)
   - [🛠  Built With ](#--built-with-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
@@ -41,7 +40,7 @@
 
 ## 🛠  Built With <a name="built-with"></a>
 - HTML
-- SASS
+- CSS
 - JavaScript
 - React
 ### Key Features <a name="key-features"></a>
@@ -133,3 +132,4 @@ If you like this project, please consider subscribing to my GitHub account for u
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+

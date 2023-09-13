@@ -1,45 +1,21 @@
 import React, { useState } from 'react';
-import { evaluate } from 'mathjs';
 import { v4 as uuidv4 } from 'uuid';
 import CalculatorButton from './button';
+import calculate from '../logic/calculate';
 import './Calculator.scss';
 
 const Calculator = () => {
   const [input, setInput] = useState('');
-  const [performCalc, setPerformCalc] = useState(false);
+  const [calcState, setCalcState] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
-  const handleAction = (value) => {
-    if (value === '=') {
-      try {
-        const valueToEvalue = input.replace(/÷|x/g, (match) => (match === '÷' ? '/' : '*'));
-        const result = evaluate(valueToEvalue);
-        setInput(result.toString() || 'Error');
-      } catch (error) {
-        setInput('NaN');
-      }
-      setPerformCalc(true);
-    } else if (value === '+/-') {
-      setInput((prevInput) => {
-        if (!prevInput) {
-          return prevInput;
-        }
-        if (prevInput.startsWith('-')) {
-          return prevInput.substring(1);
-        }
-        return `-${prevInput}`;
-      });
-    } else if (value === 'AC') {
-      setInput('');
-    } else {
-      if (performCalc) {
-        setInput('');
-        setPerformCalc(false);
-      }
-      const operators = ['%', '÷', 'x', '-', '+'];
-      if (operators.includes(value) && operators.includes(input[input.length - 1])) {
-        setInput((prevInput) => prevInput.slice(0, -1) + value);
-      } else setInput((prevInput) => prevInput + value);
-    }
+  const handleClick = (value) => {
+    const newCalcState = calculate(calcState, value);
+    setCalcState(newCalcState);
+    setInput(newCalcState.next || newCalcState.total || newCalcState.operation || '');
   };
 
   return (
@@ -50,7 +26,11 @@ const Calculator = () => {
       <div className="btn-calc">
         <div className="row-calc">
           {['AC', '+/-', '%', '÷'].map((value) => (
-            <CalculatorButton key={uuidv4()} value={value} onClick={handleAction} />
+            <CalculatorButton
+              key={uuidv4()}
+              value={value}
+              onClick={() => handleClick(value)}
+            />
           ))}
         </div>
         {[
@@ -64,7 +44,7 @@ const Calculator = () => {
               <CalculatorButton
                 key={uuidv4()}
                 value={value}
-                onClick={handleAction}
+                onClick={() => handleClick(value)}
               />
             ))}
           </div>

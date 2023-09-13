@@ -40,6 +40,7 @@ $background-color: #f4f4f4;
 
       padding: 16px;
       text-align: end;
+      cursor: auto;
     }
   }
 
@@ -54,11 +55,18 @@ $background-color: #f4f4f4;
         padding: 16px;
         border: 1px solid #cccccc83;
         background-color: #f0f0f0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
       }
     }
 
     button:last-child {
       background: #f99245;
+    }
+
+    button:active {
+      background-color: #919297;
+      color: #fff;
     }
 
     :last-child button:first-child {

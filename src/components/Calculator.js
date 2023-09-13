@@ -12,10 +12,11 @@ const Calculator = () => {
     operation: null,
   });
 
-  const handleClick = (value) => {
+  const handleBtnClick = (value) => {
     const newCalcState = calculate(calcState, value);
     setCalcState(newCalcState);
-    setInput(newCalcState.next || newCalcState.total || newCalcState.operation || '');
+    const { next, total, operation } = newCalcState;
+    setInput(next || total || operation || '');
   };
 
   return (
@@ -24,16 +25,8 @@ const Calculator = () => {
         <input type="text" value={input} readOnly />
       </div>
       <div className="btn-calc">
-        <div className="row-calc">
-          {['AC', '+/-', '%', '÷'].map((value) => (
-            <CalculatorButton
-              key={uuidv4()}
-              value={value}
-              onClick={() => handleClick(value)}
-            />
-          ))}
-        </div>
         {[
+          ['AC', '+/-', '%', '÷'],
           ['7', '8', '9', 'x'],
           ['4', '5', '6', '-'],
           ['1', '2', '3', '+'],
@@ -42,9 +35,9 @@ const Calculator = () => {
           <div key={uuidv4()} className="row-calc">
             {row.map((value) => (
               <CalculatorButton
-                key={uuidv4()}
+                key={value}
                 value={value}
-                onClick={() => handleClick(value)}
+                onClick={() => handleBtnClick(value)}
               />
             ))}
           </div>

@@ -4,7 +4,7 @@
 
 <div align="center">
 
-  <img src="screenshot.gif" alt="overview" width="auto"  height="auto" />
+  <img src="Screenshot.png" alt="overview" width="auto"  height="auto" />
   <br/>
 
   <h3><b>mathmagicians</b></h3>
@@ -132,3 +132,4 @@ If you like this project, please consider subscribing to my GitHub account for u
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+

@@ -6,15 +6,18 @@ import './Calculator.scss';
 
 const Calculator = () => {
   const [input, setInput] = useState('');
+  const [performCalc, setPerformCalc] = useState(false);
 
   const handleAction = (value) => {
     if (value === '=') {
       try {
-        const result = evaluate(input);
+        const valueToEvalue = input.replace(/÷|x/g, (match) => (match === '÷' ? '/' : '*'));
+        const result = evaluate(valueToEvalue);
         setInput(result.toString() || 'Error');
       } catch (error) {
-        setInput('Error');
+        setInput('NaN');
       }
+      setPerformCalc(true);
     } else if (value === '+/-') {
       setInput((prevInput) => {
         if (!prevInput) {
@@ -28,7 +31,14 @@ const Calculator = () => {
     } else if (value === 'AC') {
       setInput('');
     } else {
-      setInput((prevInput) => prevInput + value);
+      if (performCalc) {
+        setInput('');
+        setPerformCalc(false);
+      }
+      const operators = ['%', '÷', 'x', '-', '+'];
+      if (operators.includes(value) && operators.includes(input[input.length - 1])) {
+        setInput((prevInput) => prevInput.slice(0, -1) + value);
+      } else setInput((prevInput) => prevInput + value);
     }
   };
 
@@ -39,7 +49,7 @@ const Calculator = () => {
       </div>
       <div className="btn-calc">
         <div className="row-calc">
-          {['AC', '+/-', '%', '+'].map((value) => (
+          {['AC', '+/-', '%', '÷'].map((value) => (
             <CalculatorButton key={uuidv4()} value={value} onClick={handleAction} />
           ))}
         </div>
@@ -53,7 +63,7 @@ const Calculator = () => {
             {row.map((value) => (
               <CalculatorButton
                 key={uuidv4()}
-                value={value === 'x' ? '*' : value}
+                value={value}
                 onClick={handleAction}
               />
             ))}

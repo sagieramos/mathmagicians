@@ -57,21 +57,23 @@ $background-color: #f4f4f4;
         background-color: #f0f0f0;
         cursor: pointer;
         transition: background-color 0.3s ease;
+
+        &:last-child {
+          background: #f99245;
+        }
+
+        &:active {
+          background-color: #919297;
+          color: #fff;
+        }
       }
     }
 
-    button:last-child {
-      background: #f99245;
-    }
-
-    button:active {
-      background-color: #919297;
-      color: #fff;
-    }
-
-    :last-child button:first-child {
-      flex: 2;
-      padding: 16px 33px;
+    :last-child {
+      :first-child {
+        flex: 2;
+        padding: 16px 33px;
+      }
     }
   }
 }

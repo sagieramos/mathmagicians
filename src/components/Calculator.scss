@@ -40,6 +40,7 @@ $background-color: #f4f4f4;
 
       padding: 16px;
       text-align: end;
+      cursor: auto;
     }
   }
 
@@ -54,16 +55,25 @@ $background-color: #f4f4f4;
         padding: 16px;
         border: 1px solid #cccccc83;
         background-color: #f0f0f0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:last-child {
+          background: #f99245;
+        }
+
+        &:active {
+          background-color: #919297;
+          color: #fff;
+        }
       }
     }
 
-    button:last-child {
-      background: #f99245;
-    }
-
-    :last-child button:first-child {
-      flex: 2;
-      padding: 16px 33px;
+    :last-child {
+      :first-child {
+        flex: 2;
+        padding: 16px 33px;
+      }
     }
   }
 }

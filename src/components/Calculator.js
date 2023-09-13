@@ -1,45 +1,22 @@
 import React, { useState } from 'react';
-import { evaluate } from 'mathjs';
 import { v4 as uuidv4 } from 'uuid';
 import CalculatorButton from './button';
+import calculate from '../logic/calculate';
 import './Calculator.scss';
 
 const Calculator = () => {
   const [input, setInput] = useState('');
-  const [performCalc, setPerformCalc] = useState(false);
+  const [calcState, setCalcState] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
-  const handleAction = (value) => {
-    if (value === '=') {
-      try {
-        const valueToEvalue = input.replace(/÷|x/g, (match) => (match === '÷' ? '/' : '*'));
-        const result = evaluate(valueToEvalue);
-        setInput(result.toString() || 'Error');
-      } catch (error) {
-        setInput('NaN');
-      }
-      setPerformCalc(true);
-    } else if (value === '+/-') {
-      setInput((prevInput) => {
-        if (!prevInput) {
-          return prevInput;
-        }
-        if (prevInput.startsWith('-')) {
-          return prevInput.substring(1);
-        }
-        return `-${prevInput}`;
-      });
-    } else if (value === 'AC') {
-      setInput('');
-    } else {
-      if (performCalc) {
-        setInput('');
-        setPerformCalc(false);
-      }
-      const operators = ['%', '÷', 'x', '-', '+'];
-      if (operators.includes(value) && operators.includes(input[input.length - 1])) {
-        setInput((prevInput) => prevInput.slice(0, -1) + value);
-      } else setInput((prevInput) => prevInput + value);
-    }
+  const handleBtnClick = (value) => {
+    const newCalcState = calculate(calcState, value);
+    setCalcState(newCalcState);
+    const { next, total, operation } = newCalcState;
+    setInput(next || total || operation || '');
   };
 
   return (
@@ -48,12 +25,8 @@ const Calculator = () => {
         <input type="text" value={input} readOnly />
       </div>
       <div className="btn-calc">
-        <div className="row-calc">
-          {['AC', '+/-', '%', '÷'].map((value) => (
-            <CalculatorButton key={uuidv4()} value={value} onClick={handleAction} />
-          ))}
-        </div>
         {[
+          ['AC', '+/-', '%', '÷'],
           ['7', '8', '9', 'x'],
           ['4', '5', '6', '-'],
           ['1', '2', '3', '+'],
@@ -62,9 +35,9 @@ const Calculator = () => {
           <div key={uuidv4()} className="row-calc">
             {row.map((value) => (
               <CalculatorButton
-                key={uuidv4()}
+                key={value}
                 value={value}
-                onClick={handleAction}
+                onClick={() => handleBtnClick(value)}
               />
             ))}
           </div>

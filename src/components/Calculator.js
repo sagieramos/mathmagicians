@@ -1,42 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import CalculatorButton from './button';
+import CalculatorButton from './CalculatorButton';
 import calculate from '../logic/calculate';
 import QuoteComponent from './QuoteComponent';
+import { reducer, initialState } from './reducer';
 import './Calculator.scss';
 
 const api = {
   Key: 'qq3TQU5AD1tRAqUt3kq5Eg==KTG05ywHFyq0JPk1',
-  url: 'https://api.api-ninjas.com/v1/quotes?category=happiness',
+  url: 'https://api.api-ninjas.com/v1/quotes?category=love',
 };
 
 const Calculator = () => {
-  const [input, setInput] = useState('');
-  const [calcState, setCalcState] = useState({
-    total: null,
-    next: null,
-    operation: null,
-  });
-
-  const [quoteData, setQuoteData] = useState({
-    quote: {
-      quote: '',
-      author: '',
-      category: '',
-    },
-    loading: true,
-    error: null,
-  });
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleBtnClick = (value) => {
-    const newCalcState = calculate(calcState, value);
-    setCalcState(newCalcState);
+    const newCalcState = calculate(state.calcState, value);
+    dispatch({ type: 'SET_CALC_STATE', payload: newCalcState });
     const { next, total, operation } = newCalcState;
-    setInput(next || total || operation || '');
+    dispatch({ type: 'SET_INPUT', payload: next || total || operation || '' });
   };
 
   useEffect(() => {
-    const fetchQuote = async () => {
+    (async () => {
       try {
         const response = await fetch(api.url, {
           headers: {
@@ -49,36 +35,40 @@ const Calculator = () => {
         }
 
         const data = await response.json();
-        setQuoteData({ quote: data[0], loading: false, error: null });
+        dispatch({
+          type: 'SET_QUOTE_DATA',
+          payload: { quote: data[0], loading: false, error: null },
+        });
         console.log(data);
       } catch (error) {
-        setQuoteData({ quote: { quote: '', author: '', category: '' }, loading: false, error: error.message });
+        dispatch({
+          type: 'SET_QUOTE_DATA',
+          payload: { quote: { quote: '', author: '', category: '' }, loading: false, error: error.message },
+        });
       }
-    };
-
-    fetchQuote();
+    })();
   }, []);
 
   let quoteContent;
-  if (quoteData.loading) {
+  if (state.quoteData.loading) {
     quoteContent = <p>Loading...</p>;
-  } else if (quoteData.error) {
+  } else if (state.quoteData.error) {
     quoteContent = (
       <p>
         Error:
         {' '}
-        {quoteData.error}
+        {state.quoteData.error}
       </p>
     );
   } else {
-    const { quote } = quoteData;
+    const { quote } = state.quoteData;
     quoteContent = <QuoteComponent quote={quote} />;
   }
 
   return (
     <div id="calc">
       <div className="display-calc">
-        <input type="text" value={input} readOnly />
+        <input type="text" value={state.input} readOnly />
       </div>
       <div className="btn-calc">
         {[

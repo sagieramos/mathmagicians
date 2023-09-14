@@ -14,7 +14,8 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 About project ](#mathmagicians)
+- [📖 Fullstack Development ](#-fullstack-development-)
+    - ["Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:](#math-magicians-is-a-website-for-all-fans-of-mathematics-it-is-a-single-page-app-spa-that-allows-users-to)
   - [🛠  Built With ](#--built-with-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
@@ -36,7 +37,7 @@
 ### "Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
 
 - Make simple calculations.
-- Read a random math-related quote.
+- Use the following external API: [API Ninjas](https://api-ninjas.com/api/quotes)
 
 ## 🛠  Built With <a name="built-with"></a>
 - HTML

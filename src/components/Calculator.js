@@ -39,7 +39,6 @@ const Calculator = () => {
           type: 'SET_QUOTE_DATA',
           payload: { quote: data[0], loading: false, error: null },
         });
-        console.log(data);
       } catch (error) {
         dispatch({
           type: 'SET_QUOTE_DATA',

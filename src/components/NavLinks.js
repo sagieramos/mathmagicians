@@ -1,8 +1,9 @@
 import React from 'react';
 import NavMenuItem from './NavMenuItem';
+import './NavLinks.scss';
 
 const NavLinks = () => (
-  <nav>
+  <nav id="NavLinks">
     <ul>
       <NavMenuItem to="/">Home</NavMenuItem>
       <NavMenuItem to="/calculator">Calculator</NavMenuItem>

@@ -1,0 +1,31 @@
+#NavLinks {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    li {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+
+        &.active {
+          color: #007bff;
+          text-decoration: underline;
+        }
+
+        &:hover {
+          color: #ff5733;
+        }
+      }
+    }
+  }
+}

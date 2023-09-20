@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const NavMenuItem = ({ to, children }) => (
   <li>
-    <NavLink to={to} activeClassName="active">
+    <NavLink to={to}>
       {children}
     </NavLink>
   </li>

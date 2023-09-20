@@ -1,7 +1,3 @@
-<a name="readme-top"></a>
-
-
-
 <div align="center">
 
   <img src="Screenshot.png" alt="overview" width="auto"  height="auto" />
@@ -18,7 +14,8 @@
     - ["Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:](#math-magicians-is-a-website-for-all-fans-of-mathematics-it-is-a-single-page-app-spa-that-allows-users-to)
   - [🛠  Built With ](#--built-with-)
     - [Key Features ](#key-features-)
-  - [💻 Getting Started ](#-getting-started-)
+  - [� Getting Started ](#-getting-started-)
+  - [🚀 Live Demo ](#-live-demo-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Usage](#usage)
@@ -89,6 +86,9 @@ To run the project, execute the following command:
 - [ ] **Make API calls**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+[Live Link](https://math-hukw.onrender.com/)
 
 
 ## 🤝 Contributing <a name="contributing"></a>

@@ -1,7 +1,8 @@
 import React from 'react';
+import './Home.scss';
 
 const Home = () => (
-  <div>
+  <div id="home">
     <h2>Welcome to our page!</h2>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit.

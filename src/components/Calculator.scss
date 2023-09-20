@@ -16,10 +16,11 @@ $background-color: #f4f4f4;
 #calc-wrapper {
   @media screen and (min-width: $breakpoint-mid) {
     display: flex;
-    align-items:first baseline;
+    align-items: first baseline;
     justify-content: center;
     gap: 32px;
   }
+
   #calc {
     font-family: "Poppins", sans-serif;
     max-width: 412px;

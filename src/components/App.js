@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter, Route, Routes,
+} from 'react-router-dom';
 import Calculator from './Calculator';
 import QuoteComponent from './QuoteComponent';
 import NavLinks from './NavLinks';

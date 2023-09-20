@@ -14,11 +14,31 @@ $background-color: #f4f4f4;
 }
 
 #calc-wrapper {
+  @media screen and (max-width: $breakpoint-mid) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      align-self: flex-start;
+      padding: 0 32px;
+    }
+  }
+
   @media screen and (min-width: $breakpoint-mid) {
     display: flex;
     align-items: first baseline;
-    justify-content: center;
+    justify-content: space-between;
     gap: 32px;
+    padding: 0 64px;
+
+    h2 {
+      align-self: flex-start;
+      padding: 0 32px;
+      word-spacing: 24px;
+      letter-spacing: 12px;
+    }
   }
 
   #calc {

@@ -18,7 +18,7 @@ const QuoteComponent = () => {
   });
 
   useEffect(() => {
-    let isMounted = true; // Flag to track if the component is mounted
+    let isMounted = true;
 
     const fetchData = async () => {
       try {

@@ -18,7 +18,6 @@
     - ["Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:](#math-magicians-is-a-website-for-all-fans-of-mathematics-it-is-a-single-page-app-spa-that-allows-users-to)
   - [🛠  Built With ](#--built-with-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -46,12 +45,7 @@
 - React
 ### Key Features <a name="key-features"></a>
 - Perform maths operations
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-coming soon...
+- Random quote generator
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

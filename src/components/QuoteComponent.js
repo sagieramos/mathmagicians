@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './QuoteComponent.scss';
 
 const api = {
   Key: 'qq3TQU5AD1tRAqUt3kq5Eg==KTG05ywHFyq0JPk1',
@@ -87,7 +88,11 @@ const QuoteComponent = () => {
     );
   }
 
-  return quoteContent;
+  return (
+    <div id="quote">
+      {quoteContent}
+    </div>
+  );
 };
 
 export default QuoteComponent;

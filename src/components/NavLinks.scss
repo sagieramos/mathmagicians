@@ -1,4 +1,8 @@
 #NavLinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   ul {
     list-style-type: none;
     padding: 0;
@@ -7,6 +11,8 @@
 
     li {
       margin-right: 20px;
+      padding-right: 20px;
+      position: relative;
 
       &:last-child {
         margin-right: 0;
@@ -25,6 +31,16 @@
         &:hover {
           color: #ff5733;
         }
+      }
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 1px;
+        background-color: #333;
       }
     }
   }

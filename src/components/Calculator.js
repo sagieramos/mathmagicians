@@ -20,28 +20,31 @@ const Calculator = () => {
   };
 
   return (
-    <div id="calc">
-      <div className="display-calc">
-        <input type="text" value={input} readOnly />
-      </div>
-      <div className="btn-calc">
-        {[
-          ['AC', '+/-', '%', '÷'],
-          ['7', '8', '9', 'x'],
-          ['4', '5', '6', '-'],
-          ['1', '2', '3', '+'],
-          ['0', '.', '='],
-        ].map((row) => (
-          <div key={uuidv4()} className="row-calc">
-            {row.map((value) => (
-              <CalculatorButton
-                key={value}
-                value={value}
-                onClick={() => handleBtnClick(value)}
-              />
-            ))}
-          </div>
-        ))}
+    <div id="calc-wrapper">
+      <h2>Let&#39;s do some math!</h2>
+      <div id="calc">
+        <div className="display-calc">
+          <input type="text" value={input} readOnly />
+        </div>
+        <div className="btn-calc">
+          {[
+            ['AC', '+/-', '%', '÷'],
+            ['7', '8', '9', 'x'],
+            ['4', '5', '6', '-'],
+            ['1', '2', '3', '+'],
+            ['0', '.', '='],
+          ].map((row) => (
+            <div key={uuidv4()} className="row-calc">
+              {row.map((value) => (
+                <CalculatorButton
+                  key={value}
+                  value={value}
+                  onClick={() => handleBtnClick(value)}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -5,14 +5,16 @@ import {
 import Calculator from './Calculator';
 import QuoteComponent from './QuoteComponent';
 import NavLinks from './NavLinks';
+import Home from './Home';
 
 const App = () => (
   <BrowserRouter>
     <NavLinks />
     <Routes>
-      <Route path="/" element="Home" />
+      <Route path="/" element={<Home />} />
       <Route path="/calculator" element={<Calculator />} />
       <Route path="/quote" element={<QuoteComponent />} />
+      <Route path="*" element={<div>If page not found it goes here</div>} />
     </Routes>
   </BrowserRouter>
 );

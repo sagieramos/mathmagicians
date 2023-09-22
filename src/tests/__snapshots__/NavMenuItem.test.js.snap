@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders NavMenuItem component correctly 1`] = `
+<div>
+  <li>
+    <a
+      class=""
+      href="/calculator"
+    >
+      Example
+    </a>
+  </li>
+</div>
+`;

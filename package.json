@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "big.js": "^6.2.1",
+    "jest-fetch-mock": "^3.0.3",
     "mathjs": "^11.11.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -20,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
@@ -45,6 +46,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.17",
     "@babel/eslint-parser": "^7.22.15",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-syntax-jsx": "^7.22.5",
     "@babel/preset-react": "^7.22.15",
     "eslint": "^7.32.0",

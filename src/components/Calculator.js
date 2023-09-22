@@ -20,7 +20,7 @@ const Calculator = () => {
   };
 
   return (
-    <div id="calc-wrapper">
+    <div id="calc-wrapper" data-testid="calc-wrapper">
       <h2>Let&#39;s do some math!</h2>
       <div id="calc">
         <div className="display-calc">

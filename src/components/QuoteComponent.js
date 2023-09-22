@@ -29,7 +29,7 @@ const QuoteComponent = () => {
         });
 
         if (!isMounted) {
-          return; // Abort if component is unmounted
+          return;
         }
 
         if (!response.ok) {
@@ -58,19 +58,18 @@ const QuoteComponent = () => {
 
     fetchData();
 
-    // Cleanup function
     return () => {
-      isMounted = false; // Set isMounted to false when the component unmounts
+      isMounted = false;
     };
   }, []);
 
   let quoteContent;
 
   if (quoteData.loading) {
-    quoteContent = <p>Loading...</p>;
+    quoteContent = <p className="quote">Loading...</p>;
   } else if (quoteData.error) {
     quoteContent = (
-      <p>
+      <p className="quote">
         Error:
         {' '}
         {quoteData.error}
